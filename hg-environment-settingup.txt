@@ -1,0 +1,95 @@
+====ubuntu安装中文
+
+首先需要给Ubuntu16.04安装Chinese语言包支持。
+do apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4
+im-config -s ibus
+sudo apt-get install ibus-pinyin
+
+====firefox can not play music
+
+sudo apt-get install ubuntu-restricted-extras
+
+====查看主板
+
+sudo lshw | grep product
+
+B85M-D2V
+
+====ubuntu 常用软件
+
+EaseLink可以解决迅雷、QQ旋风，快车、rayfile、纳米盘等专用链接，再用firefox的downthemall下载非常不错。
+快车也有linux版的，wget、aria2等都非常不错。
+gimp，photoshop里除了两个有专利版权的功能外，其他的功能gimp基本都具备了。
+平时写博客的时候都是先用 Markdown 写好再转成 html 发到自己的博客上，好在 Tyora 这样的编辑器也是支持 Linux 的，和 Mac 与 Windows 上体验相同，Atom 也是一个三平台的开源编辑器，开发者们肯定都用过，能写 python 和 Web 开发之类的，功能异常强大，Markdown 写作也是支持的。
+听播客: Vocal 感觉比 Windows 都方便
+Ubuntu 自带的 PDF 阅读工具其实已经够用了，当然也可以选择著名的Foxit Reader。
+Ubuntu 和 Linux 拉开差距的地方到了，在 Windows 上我一直想要一个能和 Mac 上的各种分屏工具媲美的软件，可是一直没有。在 GNOME 环境中有一个插件叫做 Gtile，启用之后，使用自定义的快捷键直接呼出 Gtile，就能进行各种分屏操作，异常的方便，最重要的是，他是免费的。
+
+====run picharm
+enter charm, not pycharm in terminal
+the script is located in /usr/local/bin/charm
+
+==== check python site package locations
+Global site-packages
+python -m site
+
+The per user site-packages
+python -m site –user-site
+
+====picharm interpreter setting meanings
+Existing interpreter  - all changes are system wide
+Conda/Virtual interpreter - uses selected interpreter as initial source, but creates independent copy which could be modified fot project needs.
+
+install black mac
+https://www.zhihu.com/question/24370137
+
+====psutil/_psutil_linux.c:12:20: fatal error: Python.h: No such file or directory
+for python: sudo apt-get install python-dev
+for python3: sudo apt-get install python3-dev
+
+
+====python-dev是什么
+
+linux发行版通常会把类库的头文件和相关的pkg-config分拆成一个单独的xxx-dev(el)包.    //pkg=package,包裹
+
+以python为例, 以下情况你是需要python-dev的
+
+    你需要自己安装一个源外的python类库, 而这个类库内含需要编译的调用python api的c/c++文件  //如：安装使用WiringpisPi库需要python-dev
+    你自己写的一个程序编译需要链接libpythonXX.(a|so)
+    (注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)
+
+其他正常使用python或者通过安装源内的python类库的不需要python-dev.
+
+====No module named setuptools
+
+wget https://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+解压setuptools包
+# tar -xvf setuptools-0.6c11.tar.gz
+# cd setuptools-0.6c11
+编译setuptools
+# python setup.py build
+# sudo python setup.py install
+
+
+====raspberry
+login raspberry
+ssh pi@172.16.1.15
+password: raspberry
+sudo apt-get install tightvncserver
+等待片刻之后，输入
+tightvncserver
+设置密码: raspberry
+电脑上登录，输入172.16.1.15:1 即可
+sudo halt
+sudo poweroff
+sudo reboot
+
+
+====git
+git
+pull=fetch+merge，pull的话，下拉远程分支并与本地分支合并。fetch只是下拉远程分支，怎么合并，可以自己再做选择。
+git commit是将本地修改过的文件提交到本地库中。
+git push是将本地库中的最新信息发送给远程库。
+
+====
+
