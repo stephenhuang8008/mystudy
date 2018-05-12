@@ -1,0 +1,2 @@
+good: 为什么说随机最速下降法(SGD)是一个很好的方法？
+https://zhuanlan.zhihu.com/p/27609238
